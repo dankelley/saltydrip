@@ -1,6 +1,6 @@
 ## gnonom style sundial
 if (!interactive())
-    png("sundial_with_gnomon.png", width=7, height=6, unit="in", 
+    png("sundial.png", width=7, height=6, unit="in", 
         res=200, pointsize=13)
 
 library(oce)
