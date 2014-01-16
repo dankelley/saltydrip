@@ -8,22 +8,22 @@ Butterworth filters with order other than 1 have an overshoot phenomenon that ca
 
 The code given below creates the graph shown in the next section
 
-```R
+```{r}
 library(signal)
 n <- 100
 x <- 1:n
 y <- ifelse(0.3*n < x & x < 0.7*n, 1, 0)
 if (!interactive()) png("butter.png", width=7, height=5, unit="in", res=150, pointsize=9)
 plot(x, y, type='o', pch=20, ylim=c(-0.1, 1.1))
-b1 <- butter(1, 0.25)
+b1 <- butter(1, 0.1)
 y1 <- filtfilt(b1, y)
 points(x, y1, type='o', pch=20, col='red')
 
-b2 <- butter(2, 0.25)
+b2 <- butter(2, 0.1)
 y2 <- filtfilt(b2, y)
 points(x, y2, type='o', pch=20, col='blue')
 
-b3 <- butter(3, 0.25)
+b3 <- butter(3, 0.1)
 y3 <- filtfilt(b3, y)
 points(x, y3, type='o', pch=20, col='forestgreen')
 if (!interactive()) dev.off()
@@ -34,8 +34,9 @@ if (!interactive()) dev.off()
 
 The graph illustrates; for the colour coding, see the code above.
 
+[caption id="attachment_302" align="alignnone" width="625"]<a href="http://saltydrip.files.wordpress.com/2014/01/butter.png"><img class="size-large wp-image-302" alt="Demonstration of overshoot for butterworth filters of order 2 and 3." src="http://saltydrip.files.wordpress.com/2014/01/butter.png?w=625" width="625" height="446" /></a> Demonstration of overshoot for butterworth filters of order 2 and 3.[/caption]
+
 
 **4. Conclusions**
 
-Be careful in using butterworth filters of order 2 and higher.
-
+Caution is recommended in using butterworth filters of order 2 and higher. The advantage of the rapid cutoff in frequency space may be outweighed by the disadvantage of overshooting in time space
