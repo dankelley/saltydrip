@@ -1,0 +1,47 @@
+## Issue
+
+Should the coastlineWorld be updated to a 1:10m version?
+
+## Issues
+
+Size, lakes, license.
+
+### Size
+
+    > old <- 1.8+76/1000
+    > old
+    [1] 1.876
+    
+    > new<-3.11
+    > old/new
+    [1] 0.6032154
+
+So 40% increase in size.
+
+
+### Lakes
+
+New one lacks lakes (do I really care that much?)
+
+
+### License
+
+New one is free but does not say gpl (but old one doesn't either).
+
+
+## Files
+
+
+The existing 'oce' coastline is derived from the file TM_WORLD_BORDERS-0.3.zip
+downloaded from http://thematicmapping.org/downloads/world_borders.php.
+
+The higher-resolution (1:10m) coastline illustated here is from the file
+ne_10m_admin_0_countries.zip downloaded from
+http://www.naturalearthdata.com/download/10m/cultural on 2013-12-21.
+
+## Storage considerations
+
+Existing (world + maritimes; the latter is similar enough to new to be deleted)
+
+
+

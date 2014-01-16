@@ -1,4 +1,11 @@
+.Rhistory
+*.png
+*,jpg
+*.pdf
+*.out
+*~
 .htaccess
+*.html
 wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/

@@ -1,0 +1,47 @@
+*Abstract.* Demonstrate how to colourize an (x,y) curve according to z.
+
+**1. Introduction.**
+
+In Oceanography it can be useful to use colour to display z values along an
+(x,y) trajectory.  For example, CTD data might be displayed in this way, with x
+being distance along track, y being depth, and z being temperature. This post
+shows how one might do this generally with fake data.
+
+**2. Methods.**
+
+The R code given below demonstrates this with fake data.  The core idea is to
+use ``segments()``, here with ``head()`` and ``tail()`` to chop up the
+trajectory.
+
+
+
+```r
+library(oce)
+x <- 1:50
+y <- x * 2/10 + x^2/10
+z <- seq(0, 5, length.out = length(x))
+zlim <- range(z)
+npalette <- 10
+
+palette <- oceColorsJet(npalette)
+drawPalette(zlim = zlim, col = palette)
+plot(x, y, type = "l")
+segments(head(x, -1), head(y, -1), tail(x, -1), tail(y, -1), col = palette[findInterval(z, 
+    seq(zlim[1], zlim[2], length.out = npalette))], lwd = 10)
+points(x, y, pch = 20)
+```
+
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+
+
+
+**3. Results.**
+
+The graph shows that this works reasonably well.  The dots will probably not be
+useful in an actual application, and are used here just to indicate
+colourization in groups.
+
+
+**4. Conclusions.**
+
+The method works well, and is flexible in terms of colour schemes.
