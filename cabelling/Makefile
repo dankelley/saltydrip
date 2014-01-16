@@ -1,4 +1,4 @@
-all: cabelling.out
+all: knit.out #cabelling.out
 %.out: %.R
 	R --no-save < $< > $@
 clean:
