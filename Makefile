@@ -1,6 +1,6 @@
 # FIXME: put all in subdirs; add targets to create (and do in crontab)
-#all: daylength.out coastline.out coastline2.out worldmap.out coastline_new.out analemma.out sundial_with_gnomon.out
-DIRS = analemma butter cabelling colorline solstice_sunrise_sunset sundial
+#all: daylength.out coastline.out coastline2.out worldmap.out coastline_new.out
+DIRS = analemma butter cabelling colorline solstice sundial
 subdirs:
 	for dir in $(DIRS); do \
 	    $(MAKE) -C $$dir; \
