@@ -1,4 +1,5 @@
 .Rhistory
+*.md # will be created from .Rmd using knit.R
 *.png
 *,jpg
 *.pdf
