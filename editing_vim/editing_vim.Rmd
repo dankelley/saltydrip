@@ -1,0 +1,39 @@
+*Abstract.* An explanation is given for using the vim editor to compose wordpress blog items in normal-markdown or R-markdown format.
+
+**1. The gist of R markdown format.**
+
+R markdown is an extension of normal-markdown that permits the embedding of R code and output (including figures).  Wordpress seems not to handle the figure-inclusion mechanism, but there is a workaround: create the figures locally then use the 'insert media' button on wordpress to upload and include them in the text.  For more details of R-markdown format, see e.g. the [rstudio documentation](http://www.rstudio.com/ide/docs/authoring/using_markdown).  
+
+
+**2. Guidelines for vim editor.**
+
+Wordpress will insert line breaks whenever they are found in the text, so it is important not to use auto-fill in Vim.  This can be set up by inserting the line
+
+```
+autocmd! BufNewFile,BufReadPre,FileReadPre *.Rmd so ~/.vim/rmd.vim
+```
+in the ``~/.vimrc`` file, and then creating a new file in ``~/.vim`` named ``rmd.vim`` that contains
+```
+" wrap long lines in the editor window ...
+set wrap
+" ... and prevent automatic end-of-line insertion
+set textwidth=0 wrapmargin=0
+
+```
+
+**3. Guidelines for emacs editor.**
+
+(Something may be added here if someone tells me what to add...)
+
+**4. Converting R markdown to normal markdown**
+
+R-markdown may contain R code chunks, and these must be run through the ``knit()`` function provided in the ``knitr`` package; the code will look like the following:
+
+```
+library(knitr)
+knit("editing_vim.Rmd")
+```
+
+**5. Caveats.**
+
+I am new to doing this, and still find that things mess up in about a third of cases.  I have no idea what I'm doing wrong, but sometimes when I cut/paste from markdown to wordpress, whole chunks of R code disappear.  The other thing is that I'm not entirely certain whether to use ``{r}`` or ``r`` in the triple-backtic notation; I almost have the impression that wordpress differs from the standard, but that's a bit hard to believe and I'd be happy to alter this caveat if comments show that I'm wrong.
