@@ -10,13 +10,13 @@ The R code given below demonstrates this with fake data.  The core idea is to us
 
 ```{r}
 library(oce)
-x &lt;- 1:50
-y &lt;- x * 2/10 + x^2/10
-z &lt;- seq(0, 5, length.out = length(x))
-zlim &lt;- range(z)
-npalette &lt;- 10
+x <- 1:50
+y <- x * 2/10 + x^2/10
+z <- seq(0, 5, length.out = length(x))
+zlim <- range(z)
+npalette <- 10
 
-palette &lt;- oceColorsJet(npalette)
+palette <- oceColorsJet(npalette)
 drawPalette(zlim = zlim, col = palette)
 plot(x, y, type = "l")
 segments(head(x, -1), head(y, -1),

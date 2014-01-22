@@ -20,136 +20,21 @@ library(oce)
 ```
 
 ```r
-x & lt
-```
+x <- 1:50
+y <- x * 2/10 + x^2/10
+z <- seq(0, 5, length.out = length(x))
+zlim <- range(z)
+npalette <- 10
 
-```
-## Error: object 'x' not found
-```
-
-```r
--1:50
-```
-
-```
-##  [1] -1  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21
-## [24] 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
-## [47] 45 46 47 48 49 50
-```
-
-```r
-y & lt
-```
-
-```
-## Error: object 'y' not found
-```
-
-```r
--x * 2/10 + x^2/10
-```
-
-```
-## Error: object 'x' not found
-```
-
-```r
-z & lt
-```
-
-```
-## Error: object 'z' not found
-```
-
-```r
--seq(0, 5, length.out = length(x))
-```
-
-```
-## Error: object 'x' not found
-```
-
-```r
-zlim & lt
-```
-
-```
-## Error: object 'zlim' not found
-```
-
-```r
--range(z)
-```
-
-```
-## Error: object 'z' not found
-```
-
-```r
-npalette & lt
-```
-
-```
-## Error: object 'npalette' not found
-```
-
-```r
--10
-```
-
-```
-## [1] -10
-```
-
-```r
-
-palette & lt
-```
-
-```
-## Error: object 'lt' not found
-```
-
-```r
--oceColorsJet(npalette)
-```
-
-```
-## Error: object 'npalette' not found
-```
-
-```r
+palette <- oceColorsJet(npalette)
 drawPalette(zlim = zlim, col = palette)
-```
-
-```
-## Error: object 'zlim' not found
-```
-
-```r
 plot(x, y, type = "l")
-```
-
-```
-## Error: error in evaluating the argument 'x' in selecting a method for function 'plot': Error: object 'x' not found
-```
-
-```r
 segments(head(x, -1), head(y, -1), tail(x, -1), tail(y, -1), col = palette[findInterval(z, 
     seq(zlim[1], zlim[2], length.out = npalette))], lwd = 10)
-```
-
-```
-## Error: object 'x' not found
-```
-
-```r
 points(x, y, pch = 20)
 ```
 
-```
-## Error: object 'x' not found
-```
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
 
 
 
