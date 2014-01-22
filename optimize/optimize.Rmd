@@ -8,7 +8,7 @@ A convenient function for 1D optimization is ``optimize()``, also known as ``opt
 
 **2. Application.**
 
-As an example, consider the phase speed of deep gravity-capillary waves, which is given by $\omega/k$ where $\omega$ is the frequency and $k$ is the wavenumber, and the two are bound together with the dispersion relationship $omega^2=gk+\sigma k^3/\rho$, where $g$ is the acceleration due to gravity, $\sigma$ is the surface tension parameter (0.074 N/m for an air-water interface) and $\rho$ is the water density (1000 kg/m^3 for fresh water).  This yields wave speed given by the following R function.
+As an example, consider the phase speed of deep gravity-capillary waves, which is given by $\omega/k$ where $\omega$ is the frequency and $k$ is the wavenumber, and the two are bound together with the dispersion relationship $\omega^2=gk+\sigma k^3/\rho$, where $g$ is the acceleration due to gravity, $\sigma$ is the surface tension parameter (0.074 N/m for an air-water interface) and $\rho$ is the water density (1000 kg/m^3 for fresh water).  This yields wave speed given by the following R function.
 
 
 ```{r}
