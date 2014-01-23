@@ -26,6 +26,11 @@ points(x, y2, type='o', pch=20, col='blue')
 b3 <- butter(3, 0.1)
 y3 <- filtfilt(b3, y)
 points(x, y3, type='o', pch=20, col='forestgreen')
+
+legend("topright", lwd=2, col=c("black", "red", "blue", "green"),
+        legend=c("Signal", "Order 1", "Order 2", "Order 3"))
+
+
 if (!interactive()) dev.off()
 
 ```
