@@ -23,8 +23,8 @@ Tc <- (Ta + Tb) /2
 ## density change, and equiv temp change
 drho <- swRho(Sc, Tc, 0) - rho0
 dT <- drho / rho0 / swAlpha(Sc, Tc, 0)
-if (!interactive()) png("cabelling.png", width=7, height=7,
-                        unit="in", res=200, pointsize=12)
+if (!interactive()) png("cabelling.png", width=5, height=5,
+                        unit="in", res=120, pointsize=8)
 plotTS(as.ctd(c(Sa, Sb, Sc), c(Ta, Tb, Tc), 0), pch=20, cex=2)
 drawIsopycnals(levels=rho0, col="red", cex=0)
 segments(Sa, Ta, Sb, Tb, col="blue")
