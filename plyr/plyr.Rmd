@@ -44,8 +44,7 @@ latlon <- ldply(section[["station"]], function(x) c(x[['latitude']],x[['longitud
 
 A station plot is produced as follows.
 ```{r}
-if (!interactive()) png("plyr.png", unit="in", res=150,
-                        width=7, height=7, pointsize=10)
+if (!interactive()) png("plyr.png", width=5, height=5, unit="in", res=150, pointsize=7)
 mapPlot(coastlineWorld,
         projection="orthographic", orientation=c(20,-40,0))
 mapPoints(latlon$V2, latlon$V1, pch='+', cex=1/2, col='red')
