@@ -13,7 +13,8 @@ library(signal)
 n <- 100
 x <- 1:n
 y <- ifelse(0.3*n < x & x < 0.7*n, 1, 0)
-if (!interactive()) png("butter.png", width=7, height=5, unit="in", res=150, pointsize=9)
+if (!interactive()) png("butter.png", width=5, height=3, unit="in", res=150, pointsize=7)
+par(mar=c(3, 3, 1, 1), mgp=c(2, 0.7, 0))
 plot(x, y, type='o', pch=20, ylim=c(-0.1, 1.1))
 b1 <- butter(1, 0.1)
 y1 <- filtfilt(b1, y)
